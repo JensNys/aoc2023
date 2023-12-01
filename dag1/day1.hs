@@ -14,8 +14,8 @@ main = do
   fileHandle <- openFile "input.txt" ReadMode
   contents <- hGetContents fileHandle
   inputList <- return $ splitNewline contents
-  --solution
   print inputList
+    --solution
   result <- return (sum (inputToNumbers inputList))
   print result
     --input parsing
