@@ -4,20 +4,23 @@ import System.IO
 import Data.Char
 import Distribution.Simple.Program.HcPkg (list)
 
+
+
+----------------------------------------------------part 1: solution------------------------------------------------------
+
 main :: IO ()
 main = do
+    --input parsing
   fileHandle <- openFile "input.txt" ReadMode
   contents <- hGetContents fileHandle
   inputList <- return $ splitNewline contents
+  --solution
   print inputList
   result <- return (sum (inputToNumbers inputList))
   print result
---   result <- return (makeElf inputList 0)
---   print (maximum result)
+    --input parsing
   hClose fileHandle
 
-
-----------------------------------------------------solution------------------------------------------------------
 
 firstNumber :: String->Int
 firstNumber (x:xs)
@@ -46,18 +49,14 @@ inputToNumbers input= map wholeNumber input
 --------------------------------------------part 2: electric boogaloo----------------------------------
 main2 :: IO ()
 main2 = do
+    --input parsing
   fileHandle <- openFile "input.txt" ReadMode
   contents <- hGetContents fileHandle
   inputList <- return $ splitNewline contents
-  print inputList
+    --solution
   result <- return (sum (inputToNumbers2 inputList))
   print result
---   result <- return $ map (lastNumber2 ["one","two","three","four","five","six","seven","eight","nine"]) inputList
---   print result
-  --result <- return (sum (inputToNumbers inputList))
-  --print result
---   result <- return (makeElf inputList 0)
---   print (maximum result)
+    --input parsing
   hClose fileHandle
 
 
