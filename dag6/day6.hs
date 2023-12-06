@@ -10,6 +10,7 @@ testInput ::[(Int,Int)]
 testInput = [(7,9),(15,40),(30,200)]
 
 
+----------------------part1-----------------------
 solve :: [(Int,Int)]-> Int
 solve l = foldr (*) 1 (map winning_distances l)
 
@@ -23,4 +24,18 @@ possible_distances time = map (distance time) [0..time]
     distance maxtime pushtime = pushtime*(maxtime-pushtime)
 
 
+
+
+
+------------part 2------------
+solvePart2 :: Int
+solvePart2 = winning_distances $ getBigTuple input
+
+getBigTuple :: [(Int,Int)]->(Int,Int)
+getBigTuple input = (getBigNumber (map fst input),getBigNumber (map snd input))
+
+getBigNumber :: [Int]->Int
+getBigNumber input = read (foldr f "" input)
+ where f::Int->String->String
+       f i s = show i ++ s
 
