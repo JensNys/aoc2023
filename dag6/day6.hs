@@ -1,6 +1,14 @@
 {-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
 {-# HLINT ignore "Use camelCase" #-}
 
+maxFileSize::Int
+maxFileSize = 12354861385
+
+
+data File
+
+
+
 
 ---i am too lazy to parse input today, luckily it is a good day to be too lazy for input parsing.
 input ::[(Int,Int)]
